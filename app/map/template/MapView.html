@@ -1,0 +1,30 @@
+<!-- Global map layout -->
+<div class="container-fluid  vertical-center">
+
+    <div class="map-container" style="position: relative;">
+        <img src="<%= map.get('url') %>"  class="img-thumbnail" width="<%= map.get('size').width %>" height="<%= map.get('size').height %>" />
+        <% items.each(function(item){ %>
+            <% var position = map.transform(item) %>
+
+            <a class="map-point" style="left: <%= position.x %>px; top:  <%= position.y %>px"
+               tabindex="0"
+               data-html="true"
+               role="button"
+               data-toggle="popover"
+               data-trigger="focus|hover"
+               data-placement="top"
+               data-index="<%= item.cid %>"
+               title="<strong><%= item.get('name') %></strong>"
+               data-content="
+
+               <strong>Latitude:</strong> <%= item.get('latitude') %> <br>
+               <strong>Longitude:</strong> <%= item.get('latitude') %>
+
+               ">&nbsp;</a>
+
+
+        <% }); %>
+    </div>
+
+</div>
+<!-- END Global map layout -->
