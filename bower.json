@@ -1,10 +1,10 @@
 {
-  "name": "Tracer",
+  "name": "Map point",
   "version": "0.0.0",
   "authors": [
     "Alex Kucherenko <kucherenko.email@gmail.com>"
   ],
-  "description": "Marioney test",
+  "description": "Marionette app for demonstration conversion geographic coordinate to x,y coordinates on image",
   "main": "index.html",
   "moduleType": [
     "amd"
