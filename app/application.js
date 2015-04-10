@@ -17,9 +17,6 @@ require([
      */
     application.module("map", MapModule);
 
-    // Save reference to global scope
-    window.application = application;
-
     // Start application
     application.start();
 });
