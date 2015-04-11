@@ -8,8 +8,10 @@
     <title>Map Points</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="styles/preloader.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bower_components/BttrLazyLoading/dist/bttrlazyloading.min.css">
     <link rel="stylesheet" href="styles/main.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,17 +21,22 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 </head>
 
 <body>
 
-<div id="content"></div>
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+    </div>
 
-<!-- Application source. -->
-<!-- build:[src] /source.min.js -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
-<script src="bower_components/requirejs/require.js" data-main="app/main"></script>
-<!-- /build -->
+    <div id="content"></div>
+
+    <!-- Application source. -->
+    <!-- build:[src] /source.min.js -->
+
+    <script src="bower_components/requirejs/require.js" data-main="app/main"></script>
+    <!-- /build -->
 
 </body>
 </html>

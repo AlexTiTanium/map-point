@@ -11,10 +11,13 @@ define([
 
         template: template,
         collection: pointsCollection,
-        showOnNextRender: null,
+        showPopoverOnNextRender: null,
+        updateImageOnNextRender: true,
 
         ui:{
-            mapsPoints: 'a.map-point'
+            mapsPoints: 'a.map-point',
+            mapImageContainer: '#map-image-container',
+            imageLoader: '#image-loader-wrapper'
         },
 
         events: {
@@ -22,30 +25,45 @@ define([
         },
 
         initialize: function(){
-            var self = this;
-            this.listenTo(mapsCollection, 'change', this.render);
-            this.listenTo(pointsCollection, 'add',  function(item){ self.showOnNextRender = item.cid; });
-            this.listenTo(pointsCollection, 'add',  this.render);
 
+            var self = this;
+
+            this.listenTo(mapsCollection, 'change', function(){ self.updateImageOnNextRender = true; });
+            this.listenTo(pointsCollection, 'add',  function(){ self.showPopoverOnNextRender = true; });
+
+            this.listenTo(mapsCollection, 'change', this.render);
+            this.listenTo(pointsCollection, 'add',  this.render);
         },
 
         serializeData: function(){
             return {
                 map: mapsCollection.getCurrent(),
                 items: pointsCollection
-            }
+            };
         },
 
         onRender: function(){
 
+            var self = this;
+
             this.ui.mapsPoints.popover();
 
             // Show last added element
-            if(this.showOnNextRender){
+            if(this.showPopoverOnNextRender){
                 this.ui.mapsPoints.last().focus();
-                this.showOnNextRender = null;
+                this.showPopoverOnNextRender = null;
             }
-        }
 
+            if(this.updateImageOnNextRender) {
+                this.ui.mapsPoints.hide();
+                this.ui.mapsPoints.show();
+                this.updateImageOnNextRender = false;
+            }
+
+            this.ui.mapImageContainer.on("load", function () {
+                self.ui.mapsPoints.show();
+                self.ui.imageLoader.hide();
+            });
+        }
     });
 });

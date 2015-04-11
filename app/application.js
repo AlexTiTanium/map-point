@@ -3,14 +3,20 @@
 require([
     'marionette',
     'backbone',
-    'map/main'
-], function(Marionette, Backbone, MapModule) {
+    'map/main',
+    'jquery'
+], function(Marionette, Backbone, MapModule, $) {
 
     /**
      * Setup application
      */
     var Application = Marionette.Application.extend({});
     var application = new Application();
+
+
+    application.on('start', function(){
+        $('body').addClass('loaded');
+    });
 
     /**
      * Modules section

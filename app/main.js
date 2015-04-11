@@ -9,7 +9,9 @@ require.config({
         "marionette": "../bower_components/marionette/lib/backbone.marionette",
         "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap",
         "ldsh": "../bower_components/lodash-template-loader/loader",
-        "typeahead": '../bower_components/bootstrap3-typeahead/bootstrap3-typeahead'
+        "typeahead": '../bower_components/bootstrap3-typeahead/bootstrap3-typeahead',
+        "unveil": '../bower_components/unveil/jquery.unveil.min',
+        "application": 'application'
     },
 
     map: {
@@ -22,7 +24,9 @@ require.config({
         'backbone': ['jquery', 'underscore'],
         'lodashLoader': ['lodash'],
         'bootstrap': ['jquery'],
-        'typeahead': ['jquery', 'bootstrap']
+        'typeahead': ['jquery', 'bootstrap'],
+        'bttrLazyLoading': ['jquery'],
+        'application': ['jquery', 'marionette', 'typeahead', 'bootstrap', 'backbone']
     },
 
     lodashLoader: {
@@ -36,5 +40,5 @@ require.config({
         templateSettings: {}
     },
 
-    deps: ["application", "bootstrap", 'typeahead']
+    deps: ["application", "bootstrap"]
 });

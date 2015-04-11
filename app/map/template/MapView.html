@@ -1,12 +1,18 @@
 <!-- Global map layout -->
 <div class="container-fluid  vertical-center">
-
     <div class="map-container" style="position: relative;">
-        <img src="<%= map.get('url') %>"  class="img-thumbnail" width="<%= map.get('size').width %>" height="<%= map.get('size').height %>" />
+
+        <img id="map-image-container"
+             src="<%= map.get('url') %>"
+             class="map-image"
+             style="width: <%= map.get('size').width %>px; height: <%= map.get('size').height %>px"
+             width="<%= map.get('size').width %>"
+             height="<%= map.get('size').height %>" />
+
         <% items.each(function(item){ %>
             <% var position = map.transform(item) %>
 
-            <a class="map-point" style="left: <%= position.x %>px; top:  <%= position.y %>px"
+            <a class="map-point" style="left: <%= position.x.toFixed(2) %>px; top:  <%= position.y.toFixed(2) %>px"
                tabindex="0"
                data-html="true"
                role="button"
@@ -16,15 +22,15 @@
                data-index="<%= item.cid %>"
                title="<strong><%= item.get('name') %></strong>"
                data-content="
-
-               <strong>Latitude:</strong> <%= item.get('latitude') %> <br>
-               <strong>Longitude:</strong> <%= item.get('latitude') %>
-
-               ">&nbsp;</a>
-
+               <strong>Latitude:</strong> <%= item.get('latitude').toFixed(4) %> <br>
+               <strong>Longitude:</strong> <%= item.get('longitude').toFixed(4) %>"></a>
 
         <% }); %>
-    </div>
 
+        <div id="image-loader-wrapper">
+            <div id="image-loader"></div>
+        </div>
+
+    </div>
 </div>
 <!-- END Global map layout -->

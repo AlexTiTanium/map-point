@@ -32,6 +32,8 @@ define([
                 updater: this.typeaheadUpdater,
                 afterSelect: function(){ self.ui.addPointInput.val(''); }
             });
+
+
         },
 
         typeaheadSource: function(query, process){
