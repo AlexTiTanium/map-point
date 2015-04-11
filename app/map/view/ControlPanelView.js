@@ -4,8 +4,9 @@ define([
     'marionette',
     '../data/MapsCollection',
     '../data/PointsCollection',
-    "ldsh!../template/ControlPanelView.html"
-], function(Marionette, mapsCollection, pointsCollection, template) {
+    "ldsh!../template/ControlPanelView.html",
+    'typeahead'
+], function(Marionette, mapsCollection, pointsCollection, template, typeahead) {
 
     return Marionette.ItemView.extend({
 
