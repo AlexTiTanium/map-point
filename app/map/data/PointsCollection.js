@@ -32,7 +32,7 @@ define([
     collection.add({
         latitude:  -33.8678500,
         longitude: 151.2073200,
-        name: "Sydnay"
+        name: "Sydney"
     });
 
     collection.add({
