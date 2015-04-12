@@ -10,7 +10,6 @@ require.config({
         "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap",
         "ldsh": "../bower_components/lodash-template-loader/loader",
         "typeahead": '../bower_components/bootstrap3-typeahead/bootstrap3-typeahead',
-        "unveil": '../bower_components/unveil/jquery.unveil.min',
         "application": 'application'
     },
 
@@ -22,10 +21,9 @@ require.config({
 
     shim: {
         'backbone': ['jquery', 'underscore'],
-        'lodashLoader': ['lodash'],
+        'ldsh': ['lodash'],
         'bootstrap': ['jquery'],
         'typeahead': ['jquery', 'bootstrap'],
-        'bttrLazyLoading': ['jquery'],
         'application': ['jquery', 'marionette', 'typeahead', 'bootstrap', 'backbone']
     },
 
