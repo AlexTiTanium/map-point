@@ -16,7 +16,12 @@ define([
         },
 
         onStart: function(options) {
+
             this.layout = new Layout();
+
+            // For marionette inspector
+            this.app.rootView = this.layout;
+
             this.layout.render();
         }
 

@@ -56,7 +56,7 @@ define([
 
             if(this.updateImageOnNextRender) {
                 this.ui.mapsPoints.hide();
-                this.ui.mapsPoints.show();
+                this.ui.imageLoader.show();
                 this.updateImageOnNextRender = false;
             }
 
