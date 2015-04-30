@@ -62,8 +62,8 @@ define([
                 var location = results[0].geometry.location;
 
                 pointsCollection.add({
-                    latitude: location.k,
-                    longitude: location.D,
+                    latitude: location.lat(),
+                    longitude: location.lng(),
                     name: results[0].formatted_address
                 });
 
