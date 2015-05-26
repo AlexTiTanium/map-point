@@ -20,13 +20,13 @@ define([
     collection.add({
         latitude: 40.7142700,
         longitude:  -74.0059700,
-        name: "NewYork"
+        name: "New York"
     });
 
     collection.add({
         latitude:  55.7522200,
         longitude:  37.6155600,
-        name: "Moskow"
+        name: "Moscow"
     });
 
     collection.add({
